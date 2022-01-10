@@ -52,7 +52,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="emailLoginButtonTapped:" destination="fbv-fN-Ykz" eventType="touchUpInside" id="14S-hw-rik"/>
                                             <segue destination="2yH-MQ-PM8" kind="show" id="Qib-OK-5wM"/>
                                         </connections>
                                     </button>

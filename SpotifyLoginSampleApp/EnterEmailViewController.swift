@@ -8,7 +8,6 @@
 import UIKit
 import FirebaseAuth
 
-
 class EnterEmailViewController: UIViewController {
 
     //MARK: - Properties
