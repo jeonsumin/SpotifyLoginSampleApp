@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     
     //MARK: - Properties
     @IBOutlet var welcomLabel: UILabel!
+    @IBOutlet var resetPasswordButton: UIButton!
     
     
     //MARK: - LifeCycle
@@ -30,9 +31,18 @@ class MainViewController: UIViewController {
             환영합니다.
             \(email)님
             """
+        
+        let isEmailSignIn = Auth.auth().currentUser?.providerData[0].providerID == "password"
+        resetPasswordButton.isHidden = !isEmailSignIn
     }
     
     //MARK: - IBAction
+    @IBAction func resetPasswordButtonTapped(_ sender: UIButton) {
+        let email = Auth.auth().currentUser?.email ?? ""
+        Auth.auth().sendPasswordReset(withEmail: email, completion: nil)
+        
+    }
+    
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
         let firebaseAuth = Auth.auth()
         do {
