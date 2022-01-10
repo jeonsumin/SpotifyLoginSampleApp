@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>428711965769-82l9h7ehh3tltduf89i1rj9a1a2ttjl6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.428711965769-82l9h7ehh3tltduf89i1rj9a1a2ttjl6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAmwlrpsFvjgF9hzyu_2c_LPDhbPVB4GQ4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>428711965769</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.terry.SpotifyLoginSampleApp</string>
+	<key>PROJECT_ID</key>
+	<string>photogallery-d3d11</string>
+	<key>STORAGE_BUCKET</key>
+	<string>photogallery-d3d11.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:428711965769:ios:983e94c764d53858ca3b98</string>
+	<key>DATABASE_URL</key>
+	<string>https://photogallery-d3d11-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

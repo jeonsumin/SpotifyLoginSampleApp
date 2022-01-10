@@ -15,6 +15,8 @@
 		DEF1EBFF278BB25700E659F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EBFE278BB25700E659F6 /* LoginViewController.swift */; };
 		DEF1EC01278BB82400E659F6 /* EnterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EC00278BB82400E659F6 /* EnterEmailViewController.swift */; };
 		DEF1EC03278BBBA700E659F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1EC02278BBBA700E659F6 /* MainViewController.swift */; };
+		DEF1EC05278BBE9C00E659F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF1EC04278BBE9C00E659F6 /* GoogleService-Info.plist */; };
+		DEF1EC08278BBF7800E659F6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DEF1EC07278BBF7800E659F6 /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,7 @@
 		DEF1EBFE278BB25700E659F6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DEF1EC00278BB82400E659F6 /* EnterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterEmailViewController.swift; sourceTree = "<group>"; };
 		DEF1EC02278BBBA700E659F6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DEF1EC04278BBE9C00E659F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF1EC08278BBF7800E659F6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +73,7 @@
 				DEF1EBF3278BB20400E659F6 /* Assets.xcassets */,
 				DEF1EBF5278BB20400E659F6 /* LaunchScreen.storyboard */,
 				DEF1EBF8278BB20400E659F6 /* Info.plist */,
+				DEF1EC04278BBE9C00E659F6 /* GoogleService-Info.plist */,
 			);
 			path = SpotifyLoginSampleApp;
 			sourceTree = "<group>";
@@ -89,6 +94,9 @@
 			dependencies = (
 			);
 			name = SpotifyLoginSampleApp;
+			packageProductDependencies = (
+				DEF1EC07278BBF7800E659F6 /* FirebaseAuth */,
+			);
 			productName = SpotifyLoginSampleApp;
 			productReference = DEF1EBE7278BB20400E659F6 /* SpotifyLoginSampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +125,9 @@
 				Base,
 			);
 			mainGroup = DEF1EBDE278BB20400E659F6;
+			packageReferences = (
+				DEF1EC06278BBF7800E659F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = DEF1EBE8278BB20400E659F6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -132,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF1EBF7278BB20400E659F6 /* LaunchScreen.storyboard in Resources */,
+				DEF1EC05278BBE9C00E659F6 /* GoogleService-Info.plist in Resources */,
 				DEF1EBF4278BB20400E659F6 /* Assets.xcassets in Resources */,
 				DEF1EBF2278BB20400E659F6 /* Main.storyboard in Resources */,
 			);
@@ -368,6 +380,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DEF1EC06278BBF7800E659F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DEF1EC07278BBF7800E659F6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEF1EC06278BBF7800E659F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DEF1EBDF278BB20400E659F6 /* Project object */;
 }

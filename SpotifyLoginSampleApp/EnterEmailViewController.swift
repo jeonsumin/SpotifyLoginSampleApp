@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class EnterEmailViewController: UIViewController {
 
@@ -31,16 +33,57 @@ class EnterEmailViewController: UIViewController {
     }
     
     //MARK: - IBAction
-    @IBAction func nextButtonTapped(_ sender: Any) {
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        
+        // Firebase 이메일 / 비밀번호 인증
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
+        //신규 사용자 생성
+        Auth.auth().createUser(withEmail: email, password: password) {[weak self] result, error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                let code = (error as NSError).code
+                switch code{
+                case 17007: //이미 가입한 계정일 때
+                    //로그인 하기
+                    self.loginUser(withEmail: email, password: password)
+                default:
+                    self.errorMessageLabel.text = error.localizedDescription
+                }
+            }else {
+                self.showMainViewController()
+            }
+            
+        }
     }
     
+    //MARK: - Functoin
+    private func showMainViewController(){
+        let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let mainViewController = sb.instantiateViewController(withIdentifier: "MainViewController")
+        mainViewController.modalPresentationStyle = .fullScreen
+        navigationController?.show(mainViewController, sender: nil)
+    }
+    
+    private func loginUser(withEmail eamil: String, password:String){
+        Auth.auth().signIn(withEmail: eamil, password: password) { [weak self] _, error  in
+            guard let self = self else { return }
+            if let error = error {
+                self.errorMessageLabel.text = error.localizedDescription
+            }else {
+                self.showMainViewController()
+            }
+        }
+    }
 }
 
 //MARK: - UITextFieldDelegate
 extension EnterEmailViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
-        return true
+        return false
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         let isEmail = emailTextField.text == ""
